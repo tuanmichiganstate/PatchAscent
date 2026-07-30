@@ -1,0 +1,299 @@
+schema_version: 1
+policy: Labels are official. Numeric codes are null unless independently documented and hardware-verified. Do not infer ordering
+  from this file.
+main_mod_sources_2_1_codes_pending:
+- label: Direct
+  code: null
+- label: ModWheel
+  code: null
+- label: AftTouch
+  code: null
+- label: ExprPED1
+  code: null
+- label: BrthPED2
+  code: null
+- label: Velocity
+  code: null
+- label: Keyboard
+  code: null
+- label: LFO1+
+  code: null
+- label: LFO1+/-
+  code: null
+- label: LFO2+
+  code: null
+- label: LFO2+/-
+  code: null
+- label: AmpEnv
+  code: null
+- label: ModEnv1
+  code: null
+- label: ModEnv2
+  code: null
+- label: Animate1
+  code: null
+- label: Animate2
+  code: null
+- label: CV +/-
+  code: null
+- label: LFO3 +
+  code: null
+- label: LFO3 +/-
+  code: null
+- label: LFO4 +
+  code: null
+- label: LFO4 +/-
+  code: null
+- label: BndWhl+
+  code: null
+- label: BndWhl-
+  code: null
+- label: Noise
+  code: null
+main_mod_destinations_2_1_codes_pending:
+- label: O123Ptch
+  code: null
+- label: Osc1Ptch
+  code: null
+- label: Osc2Ptch
+  code: null
+- label: Osc3Ptch
+  code: null
+- label: Osc1VSnc
+  code: null
+- label: Osc2VSnc
+  code: null
+- label: Osc3VSnc
+  code: null
+- label: Osc1Shpe
+  code: null
+- label: Osc2Shpe
+  code: null
+- label: Osc3Shpe
+  code: null
+- label: Osc1 Lev
+  code: null
+- label: Osc2 Lev
+  code: null
+- label: Osc3 Lev
+  code: null
+- label: NoiseLev
+  code: null
+- label: Ring Lev
+  code: null
+- label: VcaLevel
+  code: null
+- label: Filt Drv
+  code: null
+- label: FiltDist
+  code: null
+- label: FiltFreq
+  code: null
+- label: Filt Res
+  code: null
+- label: LFO1Rate
+  code: null
+- label: LFO2Rate
+  code: null
+- label: AmpEnv A
+  code: null
+- label: AmpEnv D
+  code: null
+- label: AmpEnv R
+  code: null
+- label: ModEnv1A
+  code: null
+- label: ModEnv1D
+  code: null
+- label: ModEnv1R
+  code: null
+- label: ModEnv2A
+  code: null
+- label: ModEnv2D
+  code: null
+- label: ModEnv2R
+  code: null
+- label: FM O1>O2
+  code: null
+- label: FM O2>O3
+  code: null
+- label: FM O3>O1
+  code: null
+- label: FM Ns>O1
+  code: null
+- label: O3>FiltF
+  code: null
+- label: Ns>FiltF
+  code: null
+- label: Pan Posn
+  code: null
+- label: O123Shpe
+  code: null
+- label: AEnv Del
+  code: null
+- label: AEnv Hld
+  code: null
+- label: AEnv Sus
+  code: null
+- label: MEnv1Del
+  code: null
+- label: MEnv1Hld
+  code: null
+- label: MEnv1Sus
+  code: null
+- label: MEnv2Del
+  code: null
+- label: MEnv2Hld
+  code: null
+- label: MEnv2Sus
+  code: null
+fx_mod_sources_2_1_codes_pending:
+- label: Direct
+  code: null
+- label: ModWheel
+  code: null
+- label: AftTouch
+  code: null
+- label: ExprPED1
+  code: null
+- label: BrthPED2
+  code: null
+- label: Velocity
+  code: null
+- label: Keyboard
+  code: null
+- label: Animate1
+  code: null
+- label: Animate2
+  code: null
+- label: CV +/-
+  code: null
+- label: LFO3 +
+  code: null
+- label: LFO3 +/-
+  code: null
+- label: LFO4 +
+  code: null
+- label: LFO4 +/-
+  code: null
+- label: BndWhl+
+  code: null
+- label: BndWhl-
+  code: null
+- label: Noise
+  code: null
+fx_mod_destinations_2_1_codes_pending:
+- label: Dist Lev
+  code: null
+- label: Chor Lev
+  code: null
+- label: ChorRate
+  code: null
+- label: Chor Dep
+  code: null
+- label: Chor FB
+  code: null
+- label: Del Lev
+  code: null
+- label: Del Time
+  code: null
+- label: Del FB
+  code: null
+- label: Rev Lev
+  code: null
+- label: Rev Time
+  code: null
+- label: RevLdamp
+  code: null
+- label: RevHdamp
+  code: null
+- label: Rev Size
+  code: null
+- label: RevLpass
+  code: null
+- label: RevHpass
+  code: null
+- label: Del Slew
+  code: null
+- label: DelLdamp
+  code: null
+- label: DelHdamp
+  code: null
+- label: DelWidth
+  code: null
+- label: DelRatio
+  code: null
+- label: Lfo3Rate
+  code: null
+- label: Lfo4Rate
+  code: null
+- label: NoiseLPF
+  code: null
+- label: NoiseHPF
+  code: null
+spread_modes_codes_pending:
+- label: Diverge
+  code: null
+- label: Alternate
+  code: null
+- label: Diverge 2
+  code: null
+- label: NoteVal
+  code: null
+chorus_modes_codes_pending:
+- label: Chorus
+  code: null
+- label: Flanger
+  code: null
+- label: Phlanger
+  code: null
+chorus_types_codes_pending:
+- label: Type 1
+  code: null
+  description: 2-tap
+- label: Type 2
+  code: null
+  description: 4-tap
+- label: Type 3
+  code: null
+  description: Ensemble
+delay_modes_codes_pending:
+- label: Original
+  code: null
+- label: CrossFed
+  code: null
+- label: Dual
+  code: null
+delay_output_codes_pending:
+- label: PreDamp
+  code: null
+- label: PostDamp
+  code: null
+delay_time_modes_documented_nrpn_0_98:
+- label: Normal
+  code: 0
+- label: Double
+  code: 1
+- label: Treble
+  code: 2
+- label: QuadLoFi
+  code: 3
+- label: HexVLoFi
+  code: 4
+arp_types_2_1_codes_pending:
+- label: Up
+  code: null
+- label: Down
+  code: null
+- label: Up-Down 1
+  code: null
+- label: Up-Down 2
+  code: null
+- label: Played
+  code: null
+- label: Random
+  code: null
+- label: Chord
+  code: null
+- label: Chord 2
+  code: null

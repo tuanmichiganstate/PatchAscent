@@ -1,0 +1,23 @@
+[package]
+name = "patchascent-fake-peak"
+description = "Deterministic software-only Peak simulator for PatchAscent CI"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+publish.workspace = true
+
+[dependencies]
+patchascent-midi-messages.workspace = true
+patchascent-peak-sysex.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+chrono.workspace = true
+parking_lot.workspace = true
+patchascent-midi-transport.workspace = true
+patchascent-peak-sync.workspace = true
+uuid.workspace = true
+
+[lints]
+workspace = true

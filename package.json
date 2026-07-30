@@ -1,0 +1,34 @@
+{
+  "name": "patchascent",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/desktop",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run registry:generate && npm run build --workspace @patchascent/desktop",
+    "dev": "npm run dev --workspace @patchascent/desktop",
+    "lint": "npm run lint --workspace @patchascent/desktop",
+    "test": "npm run test --workspace @patchascent/desktop",
+    "test:coverage": "npm run test:coverage --workspace @patchascent/desktop",
+    "typecheck": "npm run typecheck --workspace @patchascent/desktop",
+    "registry:generate": "node scripts/generate-registry.mjs",
+    "registry:check": "node scripts/generate-registry.mjs --check",
+    "manifest:validate": "node scripts/validate-capture-manifest.mjs tests/fixtures/empty-capture/capture_manifest.json",
+    "quality": "npm run registry:check && npm run manifest:validate && npm run lint && npm run typecheck && npm run test && npm run build"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "vitest": "^4.1.10",
+    "yaml": "^2.8.0"
+  },
+  "overrides": {
+    "eslint": "10.8.0"
+  },
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=10.0.0"
+  }
+}

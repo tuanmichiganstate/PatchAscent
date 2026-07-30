@@ -1,0 +1,41 @@
+status: UNVERIFIED THIRD-PARTY HYPOTHESES. DO NOT SHIP OR ENABLE WRITES FROM THESE VALUES WITHOUT CLEAN-ROOM HARDWARE CONFIRMATION.
+source: https://raw.githubusercontent.com/christofmuc/KnobKraft-orm/master/adaptations/Novation_Summit.py
+license_warning: KnobKraft Orm is AGPL by default and offers a separate commercial MIT license. Do not copy source into an incompatibly
+  licensed product.
+candidate_values:
+  novation_manufacturer_id:
+  - '0x00'
+  - '0x20'
+  - '0x29'
+  peak_family_id_candidate:
+  - '0x01'
+  - '0x10'
+  - '0x00'
+  - '0x7e'
+  universal_device_inquiry_request_candidate:
+  - '0xf0'
+  - '0x7e'
+  - '0x7f'
+  - '0x06'
+  - '0x01'
+  - '0xf7'
+  patch_name_offset_candidate: '0x10'
+  patch_name_length_candidate: 16
+  edit_buffer_request_candidate:
+  - '0xf0'
+  - '0x00'
+  - '0x20'
+  - '0x29'
+  - '0x01'
+  - '0x11'
+  - '0x01'
+  - '0x33'
+  - '0x40'
+  - '0x00'
+  - '0x00'
+  - '0x00'
+  - '0x00'
+  - '0x00'
+  - '0xf7'
+  note: The cited adapter constructs requests using Summit ID while recognizing both Summit and Peak dump IDs. This is another reason
+    to capture real Peak traffic rather than copy it.

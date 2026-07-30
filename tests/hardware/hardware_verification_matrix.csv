@@ -1,0 +1,47 @@
+test_id,priority,area,procedure,evidence,pass_criteria
+HV-001,P0,Environment,Record Peak Settings > Version,Photo/text of exact OS version,Version stored in test manifest; no assumption based only on feature addendum
+HV-002,P0,Environment,"Record macOS version, Windows version, cable, USB topology",Manifest,Reproducible environment; direct USB used for baseline
+HV-003,P0,MIDI ports,Enumerate ports with Peak disconnected and connected,Port lists,Exactly added ports identified; input and output selectable independently
+HV-004,P0,Connection,"Connect, disconnect, reconnect and power-cycle Peak",Application log,No crash; stale handles close; correct ports reacquired or user prompted
+HV-005,P0,CC receive,Move Filter Resonance (CC 79),Raw monitor + UI,One coherent incoming value stream; UI follows without retransmission loop
+HV-006,P0,CC send,"Send Filter Resonance values 0,1,63,64,126,127",Peak audible/display response + echo,Every value applied; no duplicate loop; exact outbound bytes logged
+HV-007,P0,CC pair receive,Move Filter Frequency slowly across known positions,Raw monitor,Both CC streams captured with order and value relationship
+HV-008,P0,CC pair codec,Test candidate reconstruction against 0-255 values,Raw monitor + panel/display,Unique round-trip mapping proven for all boundary and adjacent values
+HV-009,P0,NRPN receive,Change Oscillator 1 Wave (0:14),Raw monitor,CC99/98/data sequence and any termination captured
+HV-010,P0,NRPN send,Set Oscillator 1 Wave through all values,Peak display/audible response,Correct value each time; parser and encoder agree
+HV-011,P0,NRPN 2.1,"Set LFO3Slew 25:39 values 0,64,127",Peak display/audible response,2.1 NRPN confirmed
+HV-012,P0,Echo control,Send then receive same CC/NRPN value,State log,Confirmation recognized but not resent; real subsequent hardware edit is not swallowed
+HV-013,P0,Output scheduler,Drag 8 controls rapidly for 60 seconds,Dropped/coalesced counters,No malformed interleaving; final hardware state equals UI state
+HV-014,P0,NRPN serialization,Move two NRPN controls simultaneously,Raw monitor,Selector/data sequences never interleave incorrectly
+HV-015,P0,Current SysEx backup,Settings > Backup > Current > USBport > Go,Captured .syx + hash,Complete F0...F7 message(s) saved losslessly
+HV-016,P0,Repeatability,Dump unchanged Current patch three times,Three hashes and byte diffs,Stable bytes identified; any variable bytes documented
+HV-017,P0,Opaque round trip,Import and export captured .syx without decoding,Byte comparison,Export is byte-identical
+HV-018,P0,Safety,Keep Patch Protect On while developing,Photo/log,No stored patch can be overwritten from panel during protocol work
+HV-019,P0,Write gate,Attempt to call disabled hardware-write command,App response,Operation impossible in production UI and requires explicit developer feature gate
+HV-020,P1,Program Change capture,Change A001 to A002,Raw monitor,Program Change sequence captured
+HV-021,P1,Bank Change capture,Change A001/B001/C001/D001,Raw monitor,Exact CC0/CC32/Program Change ordering and values captured
+HV-022,P1,Patch resync,Change patch on hardware while editor has dirty state,UI behavior,Editor does not silently overwrite local edits; prompts or preserves snapshot then resyncs
+HV-023,P1,Global isolation,Toggle PatchCue,State log,GlobalSettings changes; PatchState and patch dirty flag remain unchanged
+HV-024,P1,Settings backup,Backup Settings twice,Two .syx files,Message framing and stable bytes identified
+HV-025,P1,Pan transform,"Send 0:51 raw 0,63,64,127",Peak display,Raw-to-display map and default confirmed
+HV-026,P1,Arp Chance conflict,"Send 25:33 raw 0,1,9,10,100",Peak display/behavior,Accepted/clamped/rejected behavior documented
+HV-027,P1,Chorus mode labels,"Send 0:115 raw 0,1,2",Peak display,Each numeric code mapped to exact displayed label
+HV-028,P1,Boolean convention,Toggle KeySync and Animate Hold,Raw monitor,Actual off/on values documented
+HV-029,P1,Mod source codes,Cycle Source A through all official labels,Raw monitor,Complete bijective code map captured
+HV-030,P1,Mod destination codes,Cycle Destination through all official labels,Raw monitor,Complete bijective code map captured
+HV-031,P1,FX mod slots,"Edit source A/B, destination and depth for all 4 slots",Raw monitor,Parameter numbers and enum codes documented
+HV-032,P1,Envelope delays,Change all three delay stages,Raw monitor,Mappings and transforms documented
+HV-033,P1,LFO3/4 base parameters,"Change Wave, Rate, Rate Sync",Raw monitor,Mappings documented or declared unavailable
+HV-034,P1,Patch name diff,Rename one patch in edit buffer only,SysEx diff,"Offset, length and encoding verified"
+HV-035,P1,Single-parameter SysEx diff,Change one parameter by +1 then dump,Byte diff,Affected offsets/bit masks identified
+HV-036,P1,Round-trip decoder,Decode then re-encode unchanged dump,Byte comparison,100% byte identity
+HV-037,P1,Known-field edit,Change one decoded field and encode,Peak reload + redump,Only expected bytes differ; Peak accepts; redump matches
+HV-038,P1,Unknown-byte preservation,Modify known field in dump containing unknown data,Byte diff,All unrelated bytes preserved
+HV-039,P1,Sacrificial write,Write to predesignated backed-up slot,Backup + command + redump,Explicit confirmation; destination correct; byte verification passes
+HV-040,P1,Rollback,Restore original sacrificial slot,Redump,Original patch restored and verified
+HV-041,P1,USB soak,Automated random safe live edits for 30 min,Logs + final state readback,"No parser corruption, crash or increasing queue latency"
+HV-042,P2,DIN parity,Repeat representative CC/NRPN/SysEx tests over DIN,Logs,Differences documented; no implicit parity assumption
+HV-043,P2,Windows port behavior,Repeat connect/hotplug tests on Windows,Logs,Stable device selection and reconnection
+HV-044,P2,DAW contention,Open editor while DAW owns ports and vice versa,Observed behavior,Clear error; no silent failure; recovery path works
+HV-045,P2,Corrupt SysEx,"Import truncated, wrong-manufacturer and malformed files",Validation errors,Rejected without sending; actionable diagnostics
+HV-046,P2,Large bank dump,Capture full bank and all banks,Files + timing,All messages framed; progress and cancellation behave correctly

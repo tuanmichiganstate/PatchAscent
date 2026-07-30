@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/novation-peak-parameter.schema.json",
+  "title": "Novation Peak Parameter Definition",
+  "type": "object",
+  "required": [
+    "id",
+    "label",
+    "section",
+    "scope",
+    "binding",
+    "documented_range",
+    "evidence",
+    "gates"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+(\\.[a-z0-9_]+)+$"
+    },
+    "label": {
+      "type": "string",
+      "minLength": 1
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "section": {
+      "type": "string"
+    },
+    "scope": {
+      "enum": [
+        "patch",
+        "global",
+        "runtime_clock",
+        "unknown"
+      ]
+    },
+    "device_scope": {
+      "type": "string"
+    },
+    "binding": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "controller"
+          ],
+          "properties": {
+            "kind": {
+              "const": "cc"
+            },
+            "controller": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 127
+            }
+          },
+          "additionalProperties": true
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "controllers",
+            "codec"
+          ],
+          "properties": {
+            "kind": {
+              "const": "cc_pair"
+            },
+            "controllers": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 127
+              }
+            },
+            "codec": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "msb",
+            "lsb"
+          ],
+          "properties": {
+            "kind": {
+              "const": "nrpn"
+            },
+            "msb": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 127
+            },
+            "lsb": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 127
+            }
+          },
+          "additionalProperties": true
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind"
+          ],
+          "properties": {
+            "kind": {
+              "enum": [
+                "unmapped",
+                "unknown"
+              ]
+            }
+          },
+          "additionalProperties": true
+        }
+      ]
+    },
+    "documented_range": {
+      "type": "string"
+    },
+    "documented_default": {
+      "type": "string"
+    },
+    "default_policy": {
+      "type": "string"
+    },
+    "display_transform": {},
+    "enum_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "status",
+        "source_document",
+        "source_page"
+      ]
+    },
+    "gates": {
+      "type": "object",
+      "required": [
+        "implementation",
+        "live_write_enabled",
+        "live_receive_verified",
+        "sysex_decode_verified",
+        "sysex_encode_verified"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

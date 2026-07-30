@@ -1,0 +1,28 @@
+[package]
+name = "patchascent-peak-protocol"
+description = "Pure, evidence-gated Novation Peak protocol codecs for PatchAscent"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+publish.workspace = true
+
+[features]
+default = []
+protocol_lab = []
+nrpn_candidate_experimental = ["protocol_lab"]
+cc_pair_experimental = ["protocol_lab"]
+sysex_requests_experimental = ["protocol_lab"]
+hardware_writes_internal = []
+
+[dependencies]
+patchascent-midi-messages.workspace = true
+patchascent-peak-domain.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+
+[lints]
+workspace = true

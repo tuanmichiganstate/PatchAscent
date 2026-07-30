@@ -1,0 +1,30 @@
+priority,question,verification_method,reason
+P0,Exact installed OS/firmware build,Read Settings > Version and capture a photo/screenshot; optionally capture Universal Device Inquiry response.,"Release must record exact tested build, not merely feature-set 2.1."
+P0,CC pair encoding for all 0-255 parameters,"Capture both CC messages while moving one paired control through carefully chosen raw values: minimum, 1, 2, 63, 64, 127, 128, 129, 254, maximum.",Do not assume standard 14-bit MSB/LSB; official Peak docs only state two CCs and 0-255.
+P0,Peak NRPN send sequence and value width,"Capture a panel-generated NRPN and test candidate CC99, CC98, CC6 sequence, with and without CC38 and null termination.","MIDI defines the building blocks, but Peak-specific sequence/tolerance needs confirmation."
+P0,Edit-buffer dump request and response framing,Capture Current backup; test candidate request only in read-only protocol lab.,Required for reliable initial synchronization and librarian.
+P0,Stored-program dump request and response framing,Capture one selected stored patch and compare with Current dump.,Required before bank librarian or memory writes.
+P0,"SysEx payload size, checksum and validation rules",Capture repeated identical dumps and altered copies; identify fixed/variable regions and any checksum.,No decoder/encoder or write path until resolved.
+P0,Hardware memory write command and acknowledgement,Obtain only after backups and a sacrificial location are prepared.,Most destructive operation; must remain disabled until verified.
+P1,Bank Select MSB/LSB values and Program Change order,"Capture Peak transmission while changing A001, A128, B001, C001, D001 with Bank/Patch set to Transmit or Rec+Tran.",Do not infer bank numbering from generic MIDI alone.
+P1,Universal Device Inquiry identity bytes,Send official Universal Device Inquiry and capture response.,Reverse-engineered candidate exists but is not official documentation.
+P1,"Patch name offset, encoding and valid characters","Compare dumps after changing only patch name, including spaces and supported punctuation.",Needed for safe rename and display.
+P1,Patch Category and Genre label-to-code maps,Cycle menu values and capture NRPN/dumps.,"Official table provides only numeric ranges, not labels."
+P1,Firmware 2.1 main Mod Matrix source codes,Cycle one slot Source A through every label while logging NRPN.,Current label list has 25 entries but the MIDI table still says 0-16.
+P1,Firmware 2.1 main Mod Matrix destination codes,Cycle one slot destination through every label while logging NRPN.,Current label list is larger than the stale 0-36 table.
+P1,FX Mod Matrix slot parameter numbers and enum codes,Cycle all four slots through source/destination/depth while logging.,The current appendix lists labels but not an updated numeric MIDI map.
+P1,Chord 2 numeric code,Cycle Arp Type and capture value.,The old range 0-6 cannot represent eight listed modes without clarification.
+P1,Arp Chance actual minimum and raw handling,"Test 0, 1, 9, 10 and 100 via NRPN 25:33 and panel.","Official sources conflict among 0-100, 1-100 and 10-100."
+P1,Pan raw-to-display transform and startup default,"Test NRPN 0:51 raw values 0, 63, 64, 127 and inspect display.","Feature text displays -64..+63, while MIDI table says raw 0-127/default 0."
+P1,Chorus mode code labels,"Test NRPN 0:115 values 0,1,2 and inspect display/audio.",Official table and prose disagree on naming.
+P1,Boolean transmission convention,Capture KeySync and Animate Hold values.,1.2 PDF says 0-1 while current online table says 0-127.
+P1,Envelope Delay NRPN parameter numbers,"Capture Amp, Mod Env 1 and Mod Env 2 Delay changes.",Feature is official but 2.1 addendum does not list mappings.
+P1,"Envelope Hold, Repeats and MonoTrig mappings",Capture menu changes.,Important patch parameters are not present in the base MIDI table.
+P1,"LFO 3/4 base Wave, Rate and Rate Sync mappings",Capture menu changes.,"2.1 table only documents Phase, Slew and FadeTime."
+P1,"Delay Mode, Output and Ratio mappings",Capture menu changes.,Official feature labels exist; mappings are not in the addendum table.
+P1,Settings dump structure,Capture Settings backup twice and after one global setting change.,Global settings must be isolated from PatchState.
+P1,Tuning table dump/update protocol,Capture Settings before/after one tuning-table edit.,Selected tuning table is patch-level; table contents are global.
+P2,Wavetable name-to-index map and any user-wave support,Cycle WaveMore and compare panel logs/dumps.,"The guide lists 60 factory wavetables, while the exact encoded ordering should be captured."
+P2,Safe output pacing over USB and DIN,Run ramp tests with increasing message rates and confirm no skipped/garbled values.,Scheduler defaults should be evidence-based.
+P2,USB versus DIN response equivalence,Repeat representative tests on USB and DIN.,USB is primary; DIN support must not be assumed identical without testing.
+P2,Port hot-plug naming and reconnection behavior on macOS/Windows,Power-cycle and reconnect through direct USB ports on both platforms.,Required for reliable UX and to avoid connecting to wrong devices.

@@ -1,0 +1,13 @@
+{
+  "capture_id": "software-fixture-empty",
+  "captured_at": "2026-07-30T00:00:00Z",
+  "peak_os_version": "pending capture",
+  "computer_os": "software-only fixture",
+  "connection": "USB",
+  "midi_channel": 1,
+  "cc_nrpn_mode": "Disabled",
+  "bank_patch_mode": "Disabled",
+  "patch_protect": "On",
+  "notes": "Schema-only fixture. This is not hardware evidence.",
+  "files": []
+}

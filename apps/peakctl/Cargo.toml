@@ -1,0 +1,40 @@
+[package]
+name = "peakctl"
+description = "Read-first Novation Peak protocol laboratory for PatchAscent"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+publish.workspace = true
+
+[features]
+default = []
+nrpn_candidate_experimental = [
+  "patchascent-peak-protocol/nrpn_candidate_experimental",
+]
+cc_pair_experimental = ["patchascent-peak-protocol/cc_pair_experimental"]
+sysex_requests_experimental = [
+  "patchascent-peak-protocol/sysex_requests_experimental",
+]
+hardware_writes_internal = [
+  "patchascent-peak-protocol/hardware_writes_internal",
+]
+
+[dependencies]
+anyhow.workspace = true
+chrono.workspace = true
+clap.workspace = true
+csv.workspace = true
+ctrlc.workspace = true
+patchascent-midi-messages.workspace = true
+patchascent-midi-transport.workspace = true
+patchascent-peak-domain.workspace = true
+patchascent-peak-protocol.workspace = true
+patchascent-peak-sync.workspace = true
+patchascent-peak-sysex.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+uuid.workspace = true
+
+[lints]
+workspace = true

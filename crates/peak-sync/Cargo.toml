@@ -1,0 +1,20 @@
+[package]
+name = "patchascent-peak-sync"
+description = "Deterministic scheduling, correlation, and state reconciliation for PatchAscent"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+publish.workspace = true
+
+[dependencies]
+patchascent-peak-domain.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+uuid.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+
+[lints]
+workspace = true

@@ -1,0 +1,17 @@
+{
+  "evidence_id": "replace-me",
+  "test_id": "HV-000",
+  "parameter_ids": [],
+  "captured_at": "1970-01-01T00:00:00Z",
+  "peak_os_version": "pending capture",
+  "computer_os": "pending capture",
+  "connection": "USB",
+  "midi_channel": 1,
+  "cc_nrpn_mode": "Transmit",
+  "bank_patch_mode": "Disabled",
+  "patch_protect": "On",
+  "software_commit": "uncommitted",
+  "artifacts": [],
+  "result": "pending",
+  "notes": ""
+}
